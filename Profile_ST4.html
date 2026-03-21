@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProfileST4</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+    
+        .container-st4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            gap: 20px; 
+            width: 90%;
+            margin: 30px auto;
+            padding: 20px;
+            background: #f0f8ff;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            align-items: start;
+        }
+
+        .one {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 0;
+            align-items: start;
+        }
+
+        .two {
+            background: white; 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: space-between; 
+            align-items: flex-start; 
+            gap: 20px; 
+            align-self: start;
+            margin-top: 0;
+        }
+
+        .profile-detail-container {
+                text-align: center;
+                margin-top: 10px;
+                background-color: #26bde2;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                margin-bottom: 40px;
+                width: 90%;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #0077B6;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        .profile-quote {
+            width: 350px;
+            text-align: center;
+            color: #023e5e;
+            margin-top: 30px;
+            margin: 45px 45px;
+            font-weight: bold;
+            font-size: 20px;
+                
+        }
+
+        .about-me {
+            max-width: 450px;
+            text-align: left;
+            background-color: lightblue;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);    
+        }
+
+        .about-me h3 {
+            margin-bottom: 60px;
+            text-align: left;
+            color: #0077B6;
+            font-weight: bold;
+            margin-left: 30px;
+            margin-top: 80px;
+        }
+
+        .about-me p {
+            margin: 0;
+            text-align: left;
+            margin-bottom: 150px;
+            margin-left: 30px;
+            color: #011926;
+            font-weight: bold;
+        }
+        
+        .skills-container {
+            max-width: 450px;
+            margin-top: 60px;
+            margin-bottom: 40px;
+            background-color: #d4fff2;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skills-container h3 {
+            margin-bottom: 55px;
+            text-align: center;
+            color: black;
+            margin-top: 40px;
+            margin-bottom: 50px;
+            font-weight: bold;
+        }
+        
+        .skill {
+            margin: 10px 0;
+            text-align: left;
+        }
+        
+            
+        .skill-name {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .progress-bar {
+            background-color: white;
+            border-radius: 30px;
+            height: 15px;
+            position: relative;
+            margin-bottom: 40px;
+        }
+        
+        .progress {
+            background-color: #036294;
+            height: 100%;
+            border-radius: 20px;
+            width: 0; 
+        }
+            
+        .Communication { width: 72%; background: #0077B6; }
+        .teamwork { width: 83%; background: #0077B6; }
+        .leadership { width: 54%; background: #0077B6; }
+        .Cultural { width: 39%; background: #0077B6; }
+
+        @media (max-width: 768px) {
+            .container-st4 {
+                grid-template-columns: 1fr; 
+            }
+        }
+        .experience {
+            max-width: 100%; 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #d4d7ff;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .experience h3 {
+            margin-bottom: 20px;
+            margin-top: 10px;
+            text-align: center;
+            color: #0077b6;
+        }
+
+        .experience .main-list {
+            color: #036294;
+            padding: 0;
+        }
+
+        .experience .sub-list {
+            color: darkslategray;
+            margin-left: 20px;
+        }
+
+        .experience .sub-list li {
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            gap: 10px;
+            align-items: start;
+        }
+
+        .experience .sub-list li p {
+            margin: 0;
+            padding-left: 10px;
+            text-align: left;
+            color: black;
+        }
+
+        .experience ul {
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .experience ul ul {
+            padding-left: 30px;
+        }
+
+        .heading-with-icon {
+            background-color: #003366;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        .icon-text {
+            display: flex;
+            background: url(../images/sdg\ icon.png)no-repeat left center;
+            background-size: 40px 40px;
+            padding-left: 60px;
+            margin-right: 230px;
+            vertical-align: middle;
+            margin-bottom: 10px;
+            margin-top: 15px;
+        }
+
+        .dedicated {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            margin-left: 50px;
+        }
+
+        .icon {
+            font-size: 3rem;
+            cursor: pointer;
+            margin-bottom: 35px;
+        }
+
+        .icon:hover {
+            font-size: 4rem;
+        }
+
+        .monthly-overview {
+            background-color: #333333;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: black;
+            width: 100%;
+        }
+
+        .monthly-overview h4 {
+            margin-top: 5px;
+            color: white;
+            margin-bottom: 10px;
+            text-align: justify;
+            margin-left: 250px;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            padding: 40px;
+            margin-left: 15px;
+        }
+            
+        .day-name {
+            font-weight: bold;
+            padding: 8px;
+            background: #2c7dd2;
+            color: white;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .day, .empty {
+            padding: 8px;
+            font-size: 14px;
+            border-radius: 4px;
+            background: white;
+            text-align: center;
+        }
+
+        .day {
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .booked-day {
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.1s;
+            background: #ffb630;
+            text-align: center;
+            padding: 8px;
+            border-radius: 4px;
+        } 
+
+        .booked-day:hover {
+            background: #FFA500;
+            color: white;
+            font-size: 3rem;
+        }
+
+        @media (max-width: 500px) {
+            .calendar {
+                max-width: 100%;
+            }
+
+            .calendar-grid {
+                gap: 3px;
+            }
+
+            .day, .day-name {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+
+        .contact-me {
+            margin-top: 35px;
+            margin-bottom: 40px;
+            background-color: #0358ad;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        .contact-form {
+            max-width: 300px;
+            margin: 20px auto;
+            background: #d9effa;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .contact-form textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        .contact-form button {
+            width: 50%;
+            padding: 10px;
+            background-color: #0077b6;
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s ease-in-out;
+        }
+            
+        .contact-form button:hover {
+            background: #FFA500;
+        }
+        .icon-title {
+            font-size: 1.5rem;
+            color: white;
+            font-weight: bold;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/logo.png" alt="Clean Water & Sanitation Logo" width="80">
+            <h1>Clean water & Sanitation</h1>
+        </div>
+        <nav> 
+            <a href="../HTML/Home.html">Home</a>
+            <a href="../HTML/volunteer.html">Volunteer</a>
+            <a href="../HTML/table.html">Table</a>
+            <a href="../html/Profile_ST4.html">User Profile</a>
+            <a href="../HTML/feedback.html">Feedback</a>
+            <a href="../html/sitemap.html">Sitemap</a>
+            <a href="../HTML/team.html">Team</a>
+        </nav>
+    </header>
+    <div class="container-st4">
+        <section class="one">
+            <div class="profile-detail-container">
+                <img src="../images/user_profile_avatar_1.png" alt="Profile pic" class="profile-pic"> 
+                <div class="profile-quote">"A world with clean water is a world with hope. Let's make it a reality"</div>      
+                <ul> 
+                    <li><strong>Name : Samara Perera</strong></li>
+                    <li><strong>Age  : 20</strong></li>
+                    <li><strong>Work : Student</strong></li> 
+                    <li><strong>Location : Colombo</strong></li>
+                    <li><strong>Email : samaraperera@gmail.com</strong></li> 
+                    <li><strong>LinkedIN : samarapereraLInkedIN</strong></li>
+                </ul>
+            </div>
+            
+            <div class="about-me">
+                <h3>About Me</h3>
+                <p> "I'm deeply passionate about the UN's goal of ensuring clean water and sanitation for everyone. 
+                    Through volunteering, I work to raise awareness, advocate for better access to safe water, and get involved in projects that help communities thrive with sustainable solutions.
+                    I believe that clean water is essential to a better future for all, and I'm excited to be part of making that vision a reality. <br> 
+                    Collaborating with diverse teams has allowed me to develop strong teamwork skills, ensuring that initiatives are carried out effectively. <br> 
+                    I actively engage in discussions to communicate ideas clearly and foster meaningful partnerships.
+                    While leading efforts to drive change, I continue to learn from different perspectives, recognizing the importance of cultural understanding in addressing global challenges. <br> 
+                    Every step forward, no matter how small, contributes to a world where clean water is accessible to all."</p>
+            </div>
+
+            <div class="skills-container">
+                <h3>Skills</h3>
+                <div class="skill">
+                  <div class="skill-name">Communication - 72%</div>
+                  <div class="progress-bar">
+                    <div class="progress Communication"></div>
+                  </div>
+                </div>
+              
+              
+              <div class="skill">
+                <div class="skill-name">Team Work - 83%</div>
+                <div class="progress-bar">
+                  <div class="progress teamwork"></div>
+                </div>
+              </div>
+
+              <div class="skill">
+                <div class="skill-name">Leadership - 54%</div>
+                <div class="progress-bar">
+                  <div class="progress leadership"></div>
+                </div>
+              </div>
+
+              <div class="skill">
+                <div class="skill-name">Cultural Sensitivity - 39%</div>
+                <div class="progress-bar">
+                  <div class="progress Cultural"></div>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        <section class="two">
+            <div class="experience">
+                <h3>Experience</h3>
+                <ul class="main-list">
+                    <li>Sanitation & Hygine Promotion
+                        <ul class="sub-list">
+                            <li> Hygine Educator 
+                                <p>Gained experience in teaching communities about handwashing, 
+                                    personal hygiene, and disease prevention </p> 
+                            </li> 
+                        </ul>
+                    </li>
+                    <li>Policy and Advocacy
+                        <ul class="sub-list">
+                            <li> Water Policy Rearcher 
+                                <p>Reviewed policies and recommended improvements </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Environmental Conservation & Restoration
+                        <ul class="sub-list" >
+                            <li>Reforestation Volunteer
+                                 <p>Contributed to tree planting and ecosystem recovery projects</p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="heading-with-icon">
+                <span class="icon-text">
+                    <span class="icon-title">Dedicated About</span>
+                </span>
+                <div class="dedicated">
+                    <span class="icon" title="Building water systems">🚰</span>
+                    <span class="icon" title="Adovocating for water rights">📢</span>
+                    <span class="icon" title="Organizing water source cleaning">🚮</span>
+                    <span class="icon" title="Protecting water sources">🌱</span>
+                    <span class="icon" title="Testing & improving water quality">🔬</span>
+                    
+                </div>
+            </div>
+
+            <div class="monthly-overview">
+                <span class="icon-text">
+                    <span class="icon-title">My Schedule</span>
+                </span>
+                <h4>March</h4>
+                <div class="calendar-grid">
+                    <div class="day-name">Sun</div>
+                    <div class="day-name">Mon</div>
+                    <div class="day-name">Tue</div>
+                    <div class="day-name">Wed</div>
+                    <div class="day-name">Thu</div>
+                    <div class="day-name">Fri</div>
+                    <div class="day-name">Sat</div>
+        
+                    <div class="empty"></div>
+                    <div class="empty"></div>
+                    <div class="empty"></div>
+                    <div class="empty"></div>
+                    <div class="empty"></div>
+        
+                    <div class="day">1</div>
+                    <div class="day">2</div>
+                    <div class="day">3</div>
+                    <div class="day">4</div>
+                    <div class="day">5</div>
+                    <div class="booked-day" title="SDG Youth Summit, 9a.m - 4.p.m, University Auditorium">6</div>
+                    <div class="day">7</div>
+                    <div class="day">8</div>
+                    <div class="day">9</div>
+                    <div class="booked-day" title="Meeting 01, Montly Advocacy Plannig Session, 8a.m - 10a.m, Online(Microsoft Teams) ">10</div>
+                    <div class="day">11</div>
+                    <div class="booked-day" title="Quality Improvement Workshop, 10a.m - 12p.m, Research Lab 05">12</div>
+                    <div class="day">13</div>
+                    <div class="day">14</div>
+                    <div class="day">15</div>
+                    <div class="day">16</div>
+                    <div class="day">17</div>
+                    <div class=" booked-day" title="Water Quality Testing, 8a.m - 5p.m, Field Visit">18</div>
+                    <div class="day">19</div>
+                    <div class="day">20</div>
+                    <div class="booked-day" title="Water Rights Awareness Campaign, 3p.m - 5p.m, Lecture Hall 9">21</div>
+                    <div class="day">22</div>
+                    <div class="day">23</div>
+                    <div class="booked-day" title="Meeting 02, 10a.m - 12p.m, Online(Microsoft Teams)">24</div>
+                    <div class="day">25</div>
+                    <div class="day">26</div>
+                    <div class="day">27</div>
+                    <div class="day">28</div>
+                    <div class="day">29</div>
+                    <div class="day">30</div>
+                    <div class="booked-day" title="Meeting 03, 10a.m - 11a.m, Online(Microsoft Teams)">31</div>
+                </div>
+            </div>
+
+            <div class="contact-me">
+                <span class="icon-text">
+                    <span class="icon-title">Contact Me</span>
+                </span>
+                <div class="contact-form">
+                    <form action="#">
+                        <input type="text" name="name" placeholder="Name" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <textarea name="message" placeholder="Message" required></textarea>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <a href="#" class="go-top"> Go to Top</a>
+
+    <footer>
+        <p>&copy; 2025 Clean Water & Sanitation. All rights reserved. | <a href="../html/pageEditor_ST4.html">Page Editor</a></p>
+    </footer>
+</body>
+</html>
